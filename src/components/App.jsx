@@ -37,10 +37,9 @@ export class App extends Component {
 
         return (
             <Container>
-            <Section title={"Please leave feedback"}>
-                <FeedbackOptions options={options} onLeaveFeedback={this.addFeedback} />
-            </Section>
-             <Section title="Statistics">
+            
+                <FeedbackOptions options={options} leaveFeedback={this.addFeedback} />
+            
           {totalStats > 0 ? (
             <Statistics
               good={good}
@@ -52,7 +51,7 @@ export class App extends Component {
           ) : (
             <Notification message={'There is no feedback!'} />
           )}
-        </Section>
+       
             </Container>
         )
     }
