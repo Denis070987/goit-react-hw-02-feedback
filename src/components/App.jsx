@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
-import {Section} from "./Section/Section"
+import { Section } from "./Section/Section";
+import { Container } from "./Container/Container";
 
 
 export class App extends Component {
@@ -27,17 +28,17 @@ export class App extends Component {
   };
 
     render() {
-        const { good, neutral, bad } = this.state;
+        // const { good, neutral, bad } = this.state;
         const options = Object.keys(this.state);
-        const totalStats = this.countTotalFeedback();
-        const positivStats = this.countPositiveFeedbackPercentage();
+        // const totalStats = this.countTotalFeedback();
+        // const positivStats = this.countPositiveFeedbackPercentage();
 
         return (
-            
+            <Container>
             <Section title={'Please leave feedback'}>
                 <FeedbackOptions options={options} onLeaveFeedback={this.addFeedback} />
             </Section>
-            
+            </Container>
         )
     }
   
