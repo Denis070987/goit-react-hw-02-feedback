@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
+import {Section} from "./Section/Section"
 
 
 export class App extends Component {
@@ -32,7 +33,11 @@ export class App extends Component {
         const positivStats = this.countPositiveFeedbackPercentage();
 
         return (
-<FeedbackOptions options={options} onLeaveFeedback={this.addFeedback} />
+            
+            <Section title={'Please leave feedback'}>
+                <FeedbackOptions options={options} onLeaveFeedback={this.addFeedback} />
+            </Section>
+            
         )
     }
   
